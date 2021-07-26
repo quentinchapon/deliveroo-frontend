@@ -100,7 +100,7 @@ header {
   grid-template-columns: repeat(2, 50%);
   column-gap: 15px;
   row-gap: 15px;
-  width: 100%;
+  width: calc(100% - 15px);
 }
 
 .category {
