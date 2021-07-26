@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import logo from "./img/deliveroo-logo.png";
-import noImg from "./img/no-img.svg";
+import noImg from "./img/no-img2.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
