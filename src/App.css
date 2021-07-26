@@ -218,7 +218,7 @@ header {
 
 @media (max-width: 555px) {
   .cardsMenu {
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: repeat(1, 50%);
   }
 
   .heroBanner {
