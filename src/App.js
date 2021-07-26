@@ -56,7 +56,6 @@ function App() {
                   </h2>
                   <div className="cardsMenu">
                     {category.meals.map((meal) => {
-                      let popular = "Populaire";
                       return (
                         <div className="card">
                           <div className="cardDescription">
