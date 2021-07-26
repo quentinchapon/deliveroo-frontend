@@ -56,12 +56,21 @@ function App() {
                   </h2>
                   <div className="cardsMenu">
                     {category.meals.map((meal) => {
+                      let popular = "Populaire";
                       return (
                         <div className="card">
                           <div className="cardDescription">
                             <h3>{meal.title}</h3>
-                            <p className="dishDescription">
-                              {meal.description}
+                            <p
+                              className={
+                                meal.description !== ""
+                                  ? "dishDescription"
+                                  : "dishDescriptionEmpty"
+                              }
+                            >
+                              {meal.description
+                                ? meal.description
+                                : "Description en cours de rédaction"}
                             </p>
                             <div className="pricePopular">
                               <p className="price">{meal.price} € </p>
