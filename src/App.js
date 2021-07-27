@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./App.css";
-import Header from "./Header";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 import logo from "./img/deliveroo-logo.png";
-import noImg from "./img/no-img2.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import MainContent from "./components/MainContent";
 library.add(faStar);
 
 function App() {
@@ -37,67 +37,9 @@ function App() {
       <div className="wrapper">
         <div className="containerHeader">
           <Header logo={logo} />
-          <div className="heroBanner">
-            <div className="restaurantInfos">
-              <h1>{data.restaurant.name}</h1>
-              <p>{data.restaurant.description}</p>
-            </div>
-            <img alt="The restaurant" src={data.restaurant.picture}></img>
-          </div>
+          <Hero restaurant={data.restaurant} />
         </div>
-        <div className="mainContent">
-          <div className="category">
-            {data.categories.map((category, index) => {
-              return (
-                <>
-                  <h2>
-                    {data.categories[index].meals.length !== 0 &&
-                      data.categories[index].name}
-                  </h2>
-                  <div className="cardsMenu">
-                    {category.meals.map((meal) => {
-                      return (
-                        <div className="card">
-                          <div className="cardDescription">
-                            <h3>{meal.title}</h3>
-                            <p
-                              className={
-                                meal.description !== ""
-                                  ? "dishDescription"
-                                  : "dishDescriptionEmpty"
-                              }
-                            >
-                              {meal.description
-                                ? meal.description
-                                : "Description en cours de rédaction"}
-                            </p>
-                            <div className="pricePopular">
-                              <p className="price">{meal.price} € </p>
-                              <p className="popular">
-                                {meal.popular === true && (
-                                  <FontAwesomeIcon icon="star" />
-                                )}
-                              </p>
-                            </div>
-                          </div>
-
-                          <img
-                            src={meal.picture ? meal.picture : noImg}
-                            alt=""
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
-                </>
-              );
-            })}
-          </div>
-          <div className="basket">
-            <button className="btnValidateBasket">Valider mon panier</button>
-            <p>Votre panier est vide</p>
-          </div>
-        </div>
+        <MainContent categories={data.categories} />
       </div>
     </div>
   );
