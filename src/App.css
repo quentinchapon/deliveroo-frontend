@@ -114,13 +114,17 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 200px;
   margin-top: 84px;
   border-radius: 6px;
   background-color: white;
   box-shadow: 0 0 10px lightgrey;
   width: 30%;
   box-sizing: border-box;
+}
+
+.basketProduct {
+  display: flex;
+  flex-direction: row;
 }
 
 .basket p {
@@ -212,6 +216,8 @@ header {
   margin-left: 10px;
 }
 
+/* ------------------ SCREENS < 768 PX ------------------ */
+
 @media (max-width: 768px) {
   .mainContent {
     flex-direction: column;
@@ -245,6 +251,7 @@ header {
   }
 }
 
+/* ------------------ SCREENS < 555 PX ------------------ */
 @media (max-width: 555px) {
   .cardsMenu {
     grid-template-columns: repeat(1, 100%);

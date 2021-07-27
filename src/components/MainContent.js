@@ -1,7 +1,18 @@
+import { useState } from "react";
 import noImg from "../img/no-img2.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BasketProduct from "./BasketProduct";
 
 const MainContent = ({ categories }) => {
+  const [products, setProducts] = useState([]);
+  const [productCounter, setProductCounter] = useState([0]);
+
+  const handleAddProduct = () => {
+    const newProduct = [...products];
+    newProduct.push(<BasketProduct title={"My title"} />);
+    setProducts(newProduct);
+  };
+
   return (
     <div className="mainContent">
       <div className="category">
@@ -14,7 +25,7 @@ const MainContent = ({ categories }) => {
               <div className="cardsMenu">
                 {category.meals.map((meal) => {
                   return (
-                    <div className="card">
+                    <div className="card" onClick={handleAddProduct}>
                       <div className="cardDescription">
                         <h3>{meal.title}</h3>
                         <p
@@ -48,6 +59,7 @@ const MainContent = ({ categories }) => {
         })}
       </div>
       <div className="basket">
+        {products}
         <p>Votre panier est vide</p>
         <button className="btnValidateBasket">Valider mon panier</button>
       </div>
