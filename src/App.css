@@ -225,6 +225,22 @@ header {
 
   .category {
     width: 100%;
+    height: auto;
+  }
+  .basket {
+    bottom: 10px;
+    position: fixed;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    /* margin-top: 84px; */
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 0 10px lightgrey;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
